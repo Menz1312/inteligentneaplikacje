@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Piwo {{ .Beer.Id }}</title>
+    </head>
+    <body>
+        <h2>{{ .Beer.Name }}</h3>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Abv</th>
+                <th>Ibu</th>
+                <th>Style</th>
+                <th>Name</th>
+            </tr>
+            <tr>
+                <td>{{ .Beer.Id }}</td>
+                <td>{{ .Beer.Abv }}</td>
+                <td>{{ .Beer.Ibu }}</td>
+                <td>{{ .Beer.Style }}</td>
+                <td>{{ .Beer.Name }}</td>
+            </tr>
+        </table>
+        <h3>Rekomendacje:</h3>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Abv</th>
+                <th>Ibu</th>
+                <th>Style</th>
+                <th>Name</th>
+            </tr>
+            {{ range .RecBeers }}
+            <tr>
+                <td>{{ .Id }}</td>
+                <td>{{ .Abv }}</td>
+                <td>{{ .Ibu }}</td>
+                <td>{{ .Style }}</td>
+                <td>{{ .Name }}</td>
+            </tr>
+            {{ end }}
+        </table>
+    </body>
+</html>

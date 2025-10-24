@@ -1,0 +1,58 @@
+body { 
+    background-color: lightsteelblue; 
+}
+
+.beers {
+    overflow: hidden; 
+}
+
+.beers div, #reco div {
+    float: left; 
+    margin: 8px; 
+    padding: 8px; 
+    border-radius: 8px; 
+    transition: 0.5s; 
+    border: 1px solid white; 
+    text-align: center; 
+    font-size: 12pt; 
+}
+
+.beers div {
+    width: 180px;    
+    background-color: white; 
+    height: 160px;  
+}
+
+#reco div {
+    width: 360px;
+    background-color: bisque; 
+}
+
+.beers div:hover {
+    background-color: aliceblue; 
+    transform: scale(1.12); 
+    border: 1px solid black; 
+}
+
+.beers .generate {
+    background-color: lavender; 
+    cursor: pointer; 
+    font-size: 18pt; 
+    user-select: none; 
+}
+
+.beers .generate:hover {
+    background-color: palegreen; 
+}
+
+#stats {
+    background-color: white;
+}
+
+brate {
+    display: block; 
+}
+
+brate img {
+    cursor: pointer; 
+}

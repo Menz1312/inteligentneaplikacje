@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Oceń piwa</title>
+    </head>
+    <body>
+        <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Abv</th>
+                    <th>Ibu</th>
+                    <th>Style</th>
+                    <th>Name</th>
+                    <th>Estimated Rate</th>
+                </tr>
+                {{ range . }}
+                <tr>
+                    <td>{{ .Id }}</td>
+                    <td>{{ .Abv }}</td>
+                    <td>{{ .Ibu }}</td>
+                    <td>{{ .Style }}</td>
+                    <td>{{ .Name }}</td>
+                    <td>{{ .Estim }}</td>
+                </tr>
+                {{ end }}
+            </table>
+    </body>
+</html>

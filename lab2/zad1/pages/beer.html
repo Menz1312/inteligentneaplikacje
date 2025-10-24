@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Oceń piwa</title>
+    </head>
+    <body>
+        <form action="/reko/" method="POST">
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Abv</th>
+                    <th>Ibu</th>
+                    <th>Style</th>
+                    <th>Name</th>
+                    <th>Rate</th>
+                </tr>
+                {{ range . }}
+                <tr>
+                    <td>{{ .Id }}</td>
+                    <td>{{ .Abv }}</td>
+                    <td>{{ .Ibu }}</td>
+                    <td>{{ .Style }}</td>
+                    <td>{{ .Name }}</td>
+                    <td>
+                        <input type="radio" name="beer{{ .Id }}" value="1">1
+                        <input type="radio" name="beer{{ .Id }}" value="2">2
+                        <input type="radio" name="beer{{ .Id }}" value="3">3
+                        <input type="radio" name="beer{{ .Id }}" value="4">4
+                        <input type="radio" name="beer{{ .Id }}" value="5">5
+                    </td>
+                </tr>
+                {{ end }}
+            </table>
+            <button type="submit">Submit</button>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,41 @@
+{{ range $beer := .Beers }}
+    <div>
+        <b>{{ .Name }}</b><br>
+        Alkohol: {{ .GetAlcohol }}<br>
+        Goryczka: {{ .Ibu }}<br>
+        Styl: {{ $.Style.GetStyleName .Style }}
+        <h2>{{ .GetEstim }}</h2>
+        Z czego wynika rekomendacja?<br>Z następujących ocen: <br>
+        {{ range .Simi }}
+            <hr>
+            {{ .Name }} - {{ .Rate }} 
+            (różnice: {{ .GetDistance $beer }})
+        {{ end }}
+        Podobieństwo: 
+        <canvas id="chart{{ .Id }}" width="400px" height="400px"></canvas>
+        <script>
+        const ctx{{ .Id }} = document.getElementById('chart{{ .Id }}');
+        const myc{{ .Id }} = new Chart(ctx{{ .Id }}, {
+            type: 'scatter',
+            data: {
+                datasets: [{    
+                    label: "{{ $beer.Name }}",
+                    data: [{ x: {{ $beer.Abv }}, y: {{ $beer.Ibu }}}],
+                    pointRadius: 10,
+                    pointBackgroundColor: "red"
+                }{{ range .Simi }},{
+                    label: "{{ .Name }}",
+                    data: [{ x: {{ .Abv }}, y: {{ .Ibu }}}],
+                    pointRadius: 8,
+                    pointBackgroundColor: "black"
+                }{{ end }}]
+            }, options: {
+                scales: { 
+                    x: { type: 'linear', min: 0.02, max: 0.12 },
+                    y: { type: 'linear', min: 0, max: 120 }
+                }
+            }
+        });
+        </script>
+    </div>
+{{ end }}
