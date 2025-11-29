@@ -1,0 +1,52 @@
+body {
+    background-color: white;
+    margin: 10 auto;
+    text-align: center;
+}
+
+body, input, select, option {
+    font-family: "Segoe UI", sans-serif;
+}
+
+svg {
+    display: inline-block;
+    width: 400px;
+    height: 200px;
+    border: 1px solid gray;
+    background-color: aliceblue;
+}
+
+text {
+    fill: black;
+}
+
+circle {
+    cursor: ew-resize;
+}
+
+circle:hover {
+    fill: black;
+    r: 10px;
+}
+
+path, line {
+    fill: none;
+    stroke-width: 2px;
+}
+
+table {
+    width: 100%;
+    border: 1px solid gray;
+    background-color: aliceblue;
+    border-collapse: collapse;
+}
+
+select, option, button {
+    font-size: 12pt;
+    border: 1px solid gray;
+    background-color: aliceblue;
+}
+
+button {
+    cursor: pointer; 
+}
