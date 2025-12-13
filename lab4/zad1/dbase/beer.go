@@ -77,3 +77,14 @@ func queryBeers(query string, par ...any) []*Beer {
 	}
 	return beers
 }
+
+func GetBeersFromGroup(grupa int) []*Beer {
+	query := `
+		SELECT b.* FROM beers b 
+		JOIN grpa g ON b.id = g.id 
+		WHERE g.grupa = ? 
+		ORDER BY rand() 
+		LIMIT 10;
+	`
+	return queryBeers(query, grupa)
+}

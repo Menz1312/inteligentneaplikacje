@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Piwo: {{.Beer.Name}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; padding: 20px; max-width: 800px; margin: auto;">
+
+    <h1>{{.Beer.Name}}</h1>
+    <p>
+        <strong>ABV:</strong> {{.Beer.Abv}}% <br>
+        <strong>IBU:</strong> {{.Beer.Ibu}} <br>
+        <strong>Średnia ocena:</strong> {{printf "%.2f" .Beer.Rateavg}} (z {{.Beer.Ratecnt}} ocen)
+    </p>
+
+    <hr>
+
+    <h2>Rekomendacje</h2>
+    
+    {{if .Randoms}}
+        <ul>
+            {{range .Randoms}}
+                <li style="margin-bottom: 15px;">
+                    <strong>{{.Name}}</strong><br>
+                    <small>
+                        ABV: {{.Abv}}% | 
+                        IBU: {{.Ibu}} | 
+                        Ocena: {{printf "%.2f" .Rateavg}}
+                    </small>
+                </li>
+            {{end}}
+        </ul>
+    {{else}}
+        <p>Brak innych piw w tej grupie.</p>
+    {{end}}
+
+</body>
+</html>
