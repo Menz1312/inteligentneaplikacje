@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rower elektryczny</title>
+        <style>
+            .styl{
+                float: left;
+                width: 300px;
+                padding: 10px;
+                margin: 10px;
+                background: yellow;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="styl">
+            <p><b>Nazwa:</b> {{ .Nazwa }}</p>
+            <p><b>Zasieg:</b> {{ .Zasieg }}</p>
+            <p><b>Predkosc maksymalna:</b> {{ .MaxPredkosc }}</p>
+            <p><b>Rozmiar kol:</b> {{ .RozmiarKol }}</p>
+            <p><b>Cena:</b> {{ .Cena }}</p>
+        </div>
+    </body>
+</html>
